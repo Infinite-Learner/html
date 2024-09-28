@@ -1,0 +1,21 @@
+*{
+    margin:0;
+    padding:0;
+}
+body{
+    background-color: rgb(36, 41, 104);
+    box-sizing:border-box;
+}
+.form_Register
+{
+    display: grid;
+    place-items: center;
+    padding: 3px;
+}
+.form_Register .basic_details
+{
+    border:2px solid white;
+    padding:8px;
+    border-radius: 13px 0px 14px 0px;
+    margin-bottom: 15px;
+}

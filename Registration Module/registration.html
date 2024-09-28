@@ -1,0 +1,111 @@
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Registration</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="form_Register">
+        <form action="registration.php" method="post">
+            <div class="basic_details">
+                <h2>Personal Information</h2>
+                <label for="Name">Name</label>
+                <input  name = "Name" type="text" id="Name" placeholder="Enter your Name" required><br><br>
+                <label for="Email">Email</label>
+                <input name ="Email" type="email" id="email" placeholder="Enter your E-mail" required><br><br>
+                <label for="Phone_Number">Phone_Number</label>
+                <input name ="PHONE"  type="text" id="Phone_Number" placeholder="Enter your Phone_Number" required><br><br>
+                <label for="Whatsapp_Number">Whatsapp_Number</label>
+                <input name ="WHN" type="Whatsapp_Number" id="Whatsapp_Number" placeholder="Enter your Whatsapp_Number" required><br><br>
+            </div>
+            <div class="college_details">
+                <h2>College_Details</h2>
+                <label for="College_Name">College_Name</label>
+                <input name ="CN" type="text" id="College_Name" placeholder="Enter your College_Name" required><br><br>
+                <label for="Degree">Degree</label>
+                <input name ="DG" type="text" id="Degree" placeholder="Enter your Degree" required><br><br>
+                <label for="Branch">Branch</label>
+                <input name ="BR" type="text" id="Branch" placeholder="Enter your Branch" required><br><br>
+                <label for="Year">Year</label>
+                <input name ='Year' type="text" id="Year" placeholder="Enter your Year" required><br><br>
+            </div>
+            <div class="Event_Details">
+            <h2>Event_Section</h2>
+                <div class="te">
+                        <input type="checkbox" name="Tech_events" id="" onchange="check(this)">Technical_Events<br>
+                    <ul class="teoptions" style="display: none;">
+                        <li style="list-style: none;"><input type="checkbox" name="te[]" id="te1" value="Paper-Presentation">Paper_Presentation</li><br>
+                        <li style="list-style: none;"><input type="checkbox" name="te[]" id="te1" value="Technical_Quiz">Technical_Quiz</li><br>
+                        <li style="list-style: none;"><input type="checkbox" name="te[]" id="te1" value="Code_Master">Code_Master</li><br>
+                        <li style="list-style: none;"><input type="checkbox" name="te[]" id="te1" value="The Bug Assession">The Bug Assession</li><br>
+                        <li style="list-style: none;"><input type="checkbox" name="te[]" id="te1" value="Master Mind">Master Mind</li><br>
+                    </ul>
+                </div>
+                <div class="ne">
+                    <input type="checkbox" name="Non_Tech" onchange="ntcheck(this)" id="NE">Non_Technical_Events<br>
+                    <ul class="ntoptions" style="display: none;">
+                        <li style="list-style: none;"><input type="checkbox" name="ne[]" id="ne1" value="Connections">Connections</li><br>
+                        <li style="list-style: none;"><input type="checkbox" name="ne[]" id="ne1" value="Lyrical_Hunt">Lyrical_Hunt</li><br>
+                        <li style="list-style: none;"><input type="checkbox" name="ne[]" id="ne1" value="Just A Minute">Just A Minute(JAM)</li><br>
+                        <li style="list-style: none;"><input type="checkbox" name="ne[]" id="ne1" value="Ad-Zap">Ad-Zap</li><br>
+                    </ul>
+                </div>
+            </div>
+            <div class="neccessity_pref" style="list-style-type:none;">
+            <h2>Food-Type</h2>
+                    <li><input type="radio" name="fs"  value="Veg" onchange=func(this)><label for="" >Veg</label></li>
+                    <li><input type="radio" name="fs" value="Non-Veg" onchange=func(this)><label for="">Non-Veg</label></li>
+            </div>
+            <div class="payment_section">
+                
+            </div>
+            <button id="btn_submit" type="submit">Register_Now</button>
+        </form>
+    </div>
+    <script>  
+        function check(checkbox){
+            var ul = document.getElementsByClassName('teoptions')[0];
+            if(checkbox.checked == false)
+            {
+                ul.style.display = "none";
+                var childs = ul.getElementsByTagName('input');
+                for(var i = 0;i<childs.length;i++)
+                {
+                    if(childs[i].type=='checkbox')
+                    {
+                        childs[i].checked = false;
+                    }
+                }
+                return; 
+            }
+            ul.style.display = "block";
+        }
+            function ntcheck(checkbox){
+                var nul = document.getElementsByClassName('ntoptions')[0]
+                if(checkbox.checked == false)
+                {
+                    nul.style.display = "none";
+                    var childs = nul.getElementsByTagName('input');
+                for(var i = 0;i<childs.length;i++)
+                {
+                    if(childs[i].type=='checkbox')
+                    {
+                        childs[i].checked = false;
+                    }
+                }
+                    return;
+                }
+                nul.style.display = "block";
+            }
+
+            function func(radio){
+            if(radio.checked)
+            {
+                console.log(radio.value);
+                return;
+            } 
+        }
+           </script>
+</body>
+</html>
